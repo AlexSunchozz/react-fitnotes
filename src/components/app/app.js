@@ -9,22 +9,26 @@ const menuItems = [
     {
         name: "Упражнения", 
         href: "/", 
-        icon: exercise
+        icon: exercise,
+        alt: 'exercises'
     },
     {
         name: "Программы", 
         href: "/", 
-        icon: program
+        icon: program,
+        alt: 'programs'
     },
     {
         name: "Калькулятор", 
         href: "", 
-        icon: calc
+        icon: calc,
+        alt: 'calculation'
     },
     {
         name: "Статистика", 
         href: "/", 
-        icon: stat
+        icon: stat,
+        alt: 'statistic'
     },
 ]
 
@@ -35,13 +39,14 @@ const App = () => {
             <header className="header">
                 <div className="container">
                     <nav className="nav">
-                        <div className="burger">
+                        <div className="nav-burger">
                             <span></span>
                         </div>
-                        <a class="btn btn-outline-success" href="#" role="button">Выйти</a>
+                        <a className="btn" href="#" role="button">Выйти</a>
                     </nav>
                 </div>
             </header>
+            
         </div> 
     );
 }
