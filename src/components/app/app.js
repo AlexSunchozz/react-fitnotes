@@ -1,53 +1,97 @@
 import './app.scss'
-import headerImg from './header.jpeg';
-import exercise from './gantel.png';
-import program from './program.svg';
-import calc from './calc.png';
-import stat from './stat.png';
+import exercise from './icons/exercise.png';
+import program from './icons/program.png';
+import calc from './icons/calc.png';
+import stat from './icons/statistic.png';
+import start from './icons/start.png';
+import Menu from '../menu/menu';
+import timer from './icons/timer.png';
+import calendar from './icons/calendar.png'
+
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {MainPage} from '../pages';
+import {useState} from 'react';
 
 const menuItems = [
     {
-        name: "Упражнения", 
+        name: "Начать тренировку", 
         href: "/", 
-        icon: exercise,
-        alt: 'exercises'
+        icon: start,
+        alt: 'start',
+        focus: true
     },
     {
-        name: "Программы", 
-        href: "/", 
+        name: "Упражнения", 
+        href: "/exercises", 
+        icon: exercise,
+        alt: 'exercises',
+        focus: false
+    },
+    {
+        name: "Мои тренировки", 
+        href: "/trainings", 
         icon: program,
-        alt: 'programs'
+        alt: 'trainings',
+        focus: false
     },
     {
         name: "Калькулятор", 
-        href: "", 
+        href: "/calculating", 
         icon: calc,
-        alt: 'calculation'
+        alt: 'calculation',
+        focus: false
     },
     {
         name: "Статистика", 
-        href: "/", 
+        href: "/statistics", 
         icon: stat,
-        alt: 'statistic'
+        alt: 'statistic',
+        focus: false
     },
 ]
 
 const App = () => {
+    const [active, setActive] = useState(false);
 
     return (  
-        <div className='wrapper'>
-            <header className="header">
-                <div className="container">
-                    <nav className="nav">
-                        <div className="nav-burger">
-                            <span></span>
-                        </div>
-                        <a className="btn" href="#" role="button">Выйти</a>
-                    </nav>
-                </div>
-            </header>
-            
-        </div> 
+        <Router>
+            <div className='wrapper'>
+                <header className="header">
+                    <div className="container">
+                        <nav className="header-nav">
+                            <div className="header-nav__burger" onClick={() => setActive(!active)}>
+                                <span></span>
+                            </div>
+                            <div className='header-nav__item desktop'>
+                                <div className="header-day">Сегодня</div>
+                                <div className='header-nav__item-item'>
+                                    {/* <div className="header-timer"><img src={timer} alt="timer" /></div> */}
+                                    <div className="header-start">Начать</div>
+                                    <div className="header-calendar"><img src={calendar} alt="calendar" /></div>
+                                </div>
+                            </div>
+                            <a className="header-nav__btn btn" href="#" role="button">Выйти</a>
+                        </nav>
+                        <div className='header-nav__item mobile'>
+                                <div className="header-day">Сегодня</div>
+                                <div className='header-nav__item-item'>
+                                    {/* <div className="header-timer"><img src={timer} alt="timer" /></div> */}
+                                    <div className="header-start">Начать</div>
+                                    <div className="header-calendar"><img src={calendar} alt="calendar" /></div>
+                                </div>
+                            </div>
+                    </div>
+                    <Menu active={active} setActive={setActive} menuItems={menuItems}/>
+                </header>
+                <main className='main'>
+                    <Routes>
+                        <Route exact path="/" element={<MainPage/>}></Route>
+                        {/* <Route path='/exercises' element={<Exercises/>}></Route> */}
+                        {/* <Route path='/trainings' element={<Trainings/>}></Route> */}
+                    </Routes>
+                </main>
+            </div> 
+        </Router>
     );
 }
 

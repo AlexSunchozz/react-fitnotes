@@ -1,0 +1,24 @@
+.add-btn {
+    &-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        &__item:hover {
+            color: white !important;
+        }
+        &__item {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            font-size: 40px;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: green;
+        }
+    }
+    cursor: pointer;
+}
