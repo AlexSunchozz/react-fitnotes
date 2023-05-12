@@ -1,0 +1,16 @@
+.exercises {
+    flex: 0 0 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+    &-title {
+        font-size: 40px;
+        font-weight: 400;
+        color: rgb(80, 80, 80);
+        text-align: center;
+    }
+}

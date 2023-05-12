@@ -5,6 +5,9 @@
     align-items: center;
     width: 100%;
     height: 55px;
+    &-container.active {
+        background-color: #2b4589;
+    }
     &-container {
         padding: 20px 45px !important;
         margin-top: 20px;
@@ -46,3 +49,5 @@
             img {width: 100%; height: 100%;}
     }
 }
+
+.hide {display: none;}
