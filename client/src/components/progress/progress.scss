@@ -1,0 +1,40 @@
+.fade {
+    backdrop-filter: blur(2px) !important; 
+}
+.modal-content {
+    background-color: #202020 !important;
+}
+.modal-header {
+    color: white !important;
+    border-bottom: 1px solid #c43def !important;
+}
+.btn-border {
+    background-color: transparent !important;
+}
+.btn-close {
+    background: transparent url('./img/krest.png') center/3em auto no-repeat !important;
+    opacity: 1 !important;
+}
+label {
+    font-weight: 400;
+    color: #D0D0D0;
+    font-size: 14px;
+}
+input#progress-weight, input#repeations {margin-top: 0px !important; font-size: 16px !important;}
+.progress-plus {margin-right: 20px;}
+.progress-plus, .progress-minus{
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 400;
+    color: #D0D0D0;
+}
+
+.progress {
+    background-color: transparent !important; 
+    .modal-dialog {
+        height: fit-content !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        
+    }
+}

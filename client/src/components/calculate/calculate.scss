@@ -1,0 +1,102 @@
+
+input#calc-weight, input#calc-repition, input#calories-age, input#calories-height, input#calories-weight {
+    margin-top: 0px !important;
+}
+.calc-modal.active .modal-dialog{ height: fit-content !important;}
+.repitions-calc {
+    font-size: 16px;
+    font-weight: 400;
+    flex: 0 1 50%;
+    text-align: center;
+    position: relative;
+    color: #d2d2d2;
+}
+.repitions-calc::after {
+    content: 'x';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color:rgb(112, 112, 112);
+}
+.kg { 
+    color:rgb(112, 112, 112);
+}
+.prog-label {
+    @media (max-width:375px) {
+        padding: 15px 0 15px 25px !important;
+    }
+}
+.plus-minus-prog {
+    @media (max-width:375px) {
+        padding-right: 30px !important;
+    }
+}
+.calculator-content {padding-bottom: 30px;}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link{border: none !important; color: #808080 !important;}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    background-color: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid white !important;
+    color: white !important;
+}
+.nav-tabs .nav-item{ padding: 10px 2px !important;}
+.nav-link {padding: 5px 0px !important; @media(max-width:345px) {font-size: 12px !important;}}
+.nav-tabs {border: none !important; margin: 10px 0px !important;}
+.calories-content input {width: 100% !important;}
+
+.scale div div {font-size: 9px; margin-bottom: 3px;}
+.scale div span {
+    width: 100%;
+    height: 5px;
+    border-radius: 0px;
+}
+.scale div:first-child {
+    border-radius: 20px 0 0 20px;
+} 
+.scale div:first-child, .scale div:last-child, .scale div:nth-child(2) {
+    flex: 0 1 14%;
+
+} 
+.scale div:first-child span{
+    background-color: rgb(255, 0, 0);
+}
+.scale div:nth-child(2) span{
+    background-color: rgb(255, 179, 0);
+}
+.scale div:nth-child(3) span{
+    background-color: rgb(30, 255, 0);
+}
+.scale div:nth-child(4) span{
+    background-color: rgb(255, 179, 0);
+}
+.scale div:nth-child(5) span{
+    background-color: red;
+}
+.scale div:nth-child(6) span{
+    background-color: rgb(175, 0, 0);
+}
+.scale div:last-child span{
+    background-color: rgb(139, 0, 0);
+}
+.scale div:nth-child(4), .scale div:nth-child(5), .scale div:nth-child(6) {
+    flex: 0 1 28%;
+} 
+.scale div:nth-child(3){
+    flex: 0 1 28%;
+} 
+
+.nor {color: green;}
+.def {color: rgb(255, 0, 0);}
+.ned {color: rgb(255, 179, 0);}
+.izb {color: rgb(255, 179, 0);}
+.oz1 {color: red;}
+.oz2 {color: rgb(175, 0, 0);}
+.oz3 {color: rgb(139, 0, 0);}
+.rezult {font-size: 14px; font-weight: 400; span{font-size: 20px; margin-right: 20px;}}
+.rezult {margin-top: 30px;}
+
+.calories-days {height: 80px;}
+.calories-content {select { color: white !important;}}
+
+.modal-content { height: fit-content !important;}

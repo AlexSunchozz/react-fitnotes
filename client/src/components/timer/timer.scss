@@ -1,0 +1,61 @@
+.timer.active:not(.margin) {
+    display: flex;
+    margin-top: 150px !important;
+}
+.timer.active.margin {
+    display: flex;
+    margin-top: 40px !important;
+}
+.timer {
+    display: none;
+    margin-top: 50px;
+    padding-bottom: 50px;
+    align-items: center;
+    width: 100%;
+    height: 55px;
+    &-container.active {
+        background-color: #2b4589;
+    }
+    &-container {
+        padding: 20px 45px !important;
+        margin-top: 20px;
+        background-color: #202020;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media (max-width:500px) {
+            padding: 20px 20px !important;
+        }
+    }
+    &-content {
+        display: flex;
+        align-items: center;
+        & > *:not(:last-child) {margin-right: 20px;}
+        &__settings {
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            img {width: 100%; height: 100%;}
+        }
+        &__time {
+            font-size: 20px;
+            font-weight: 400;
+            color: white;
+        }
+        &__plus, &__minus {
+            cursor: pointer;
+            font-size: 22px;
+            font-weight: 400;
+            color: #D0D0D0;
+        }
+    }
+    &-play {
+        cursor: pointer;
+        width: 30px;
+            height: 30px;
+            img {width: 100%; height: 100%;}
+    }
+}
+
+.hide {display: none;}
