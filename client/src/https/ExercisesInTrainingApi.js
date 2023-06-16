@@ -26,12 +26,12 @@ export const getExercisesInTraining = async (userId, date) => {
     return data;
 }
 
-export const removeExercises = async (trainingId, exerciseId) => {
-    const {data} = await $host.post('api/exercisesintraining/' + trainingId, {exerciseId})
-    return data
-}
-
 export const getallexercisesofuser = async (trainingId) => {
     const {data} = await $authHost.post('api/exercisesintraining/getallexercisesofuser', {trainingId})
     return data;
+}
+
+export const removeExercises = async (trainingId, exerciseId) => {
+    const {data} = await $host.post('api/exercisesintraining/' + trainingId, {exerciseId})
+    return data
 }

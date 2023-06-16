@@ -28,7 +28,7 @@ const MainPage = observer(() => {
     const [currentExercises, setExercisesCurrent] = useState([])
 
     //Название тренировки
-    const [nameTraining, setNameTraining] = useState('Без названия');
+    const [nameTraining, setNameTraining] = useState('');
 
     // Idтренировки
     const [tainingID, setTrainingId] = useState()
@@ -47,6 +47,8 @@ const MainPage = observer(() => {
     // Пользовательские упражнения
     const [customEx, setCustomEx] = useState(false)
 
+    const [nameInput, setNameInput] = useState('Без названия')
+    
     // Наличие тренировки
     const [exsistsTraining, setExistsTraining] = useState(false)
 
@@ -55,10 +57,10 @@ const MainPage = observer(() => {
 
     const start = async () => {
         if (saveExInTraining.length === 0 ) return
-
+        console.log(nameTraining)
         setStartTraining(true)
         setExistsTraining(true)
-
+        if (nameTraining === '') setNameTraining('Без названия')
         const res = await addTrainingOfUser(nameTraining !== '' ? nameTraining : 'Без названия', dateTraining, user.userId).then(data => {
             trainings.setTraining(data); 
 
@@ -111,6 +113,8 @@ const MainPage = observer(() => {
                     const res = removeTraining(tainingID).then(data => {
                         setStartTraining(false)
                         setExistsTraining(false)
+                        setNameTraining('')
+                        setSaveExInTraining([])
                     })
                 }
             }
@@ -138,11 +142,9 @@ const MainPage = observer(() => {
 
                 trainings.setTraining(data[0]); 
                 setTrainingId(trainings.trainings.id)
-                
                 setNameTraining(data[0].name)
                 setStartTraining(true)
                 setNameTraining(trainings.trainings.name)
-                
                 getExercisesInTraining(user.userId, dateTraining).then(data => {
 
                     if (data.length === 0) {
@@ -161,6 +163,7 @@ const MainPage = observer(() => {
             }
         })
     }
+
     useEffect(() => {
         chechTrainingsOfUser(user.userId, dateTraining)
     }, [user, dateTraining])
@@ -196,7 +199,7 @@ const MainPage = observer(() => {
                     {
                         <Container style={{padding:'0px'}}>
                             <div className='d-flex justify-content-center align-items-center flex-column' style={{width: '100%'}}>
-                                <input placeholder={exsistsTraining? `` : 'Введите название тренировки'} 
+                                <input placeholder={exsistsTraining ? nameTraining : 'Введите название тренировки'} 
                                     type="text" id="training-name" 
                                     name="training-name" 
                                     className='training-name'
@@ -207,7 +210,7 @@ const MainPage = observer(() => {
                                             textAlign: 'center'}}
                                     value={nameTraining}
                                     onInput={(e) => { 
-                                                    setNameTraining(e.target.value)}}
+                                        setNameTraining(e.target.value)}}
                                     onBlur={() => { addNameTraining(nameTraining)}}>
                                 </input>
                             </div>

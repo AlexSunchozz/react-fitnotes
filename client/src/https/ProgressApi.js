@@ -3,7 +3,6 @@ import { EXERCISES_ROUTE } from "../components/utils/consts";
 import jwt_decode from 'jwt-decode';
 
 export const addProgress = async (numberapproach, weightofinventory, repetition, exerciseId, trainingId, dateTraining) => {
-    console.log(dateTraining)
     const {data} = await $authHost.post(`api/progress`, {numberapproach, weightofinventory, repetition, exerciseId, trainingId, dateTraining});
     return data;
 }

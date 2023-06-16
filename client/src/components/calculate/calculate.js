@@ -33,7 +33,7 @@ const Calculator = ({show, onHide, setActiveProgressModal}) => {
             calculating(weight, repition)
         } else {
             calculating(weight, repition)
-            setRepition(repition + 1)
+            setRepition(+repition + 1)
         }
     }
 
@@ -43,7 +43,7 @@ const Calculator = ({show, onHide, setActiveProgressModal}) => {
             setShowWarning(false);
             calculating(+weight, +repition)
         } else {
-            setRepition(repition - 1);
+            setRepition(+repition - 1);
             setShowWarning(false);
             calculating(weight, repition)
         }
@@ -72,7 +72,6 @@ const Calculator = ({show, onHide, setActiveProgressModal}) => {
             }
     
             calcul.push({repition: 1, weight: RM})
-            console.log(calcul)
             setCalc(calcul)
             calcul = []
         } else {
@@ -121,7 +120,7 @@ const Calculator = ({show, onHide, setActiveProgressModal}) => {
                                 </div>
                                 <div className="d-flex align-items-center plus-minus-prog" style={{width:'fit-content', paddingRight:'40px'}}>
                                     <div className="progress-plus"
-                                        onClick={() => {setWeight(weight + 1); calculating(+weight, +repition)}}>+</div>
+                                        onClick={() => {setWeight(+weight + 1); calculating(+weight, +repition)}}>+</div>
                                     <div className="progress-minus"
                                         onClick={() => {checkWeight()}}>—</div>
                                 </div>

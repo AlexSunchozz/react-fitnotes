@@ -46,10 +46,10 @@
     border: 2px solid transparent !important;
 }
 
-.calendar .day:hover {
-    background-color: green;
-    cursor: pointer;
-}
+// .calendar .day:hover {
+//     background-color: green;
+//     cursor: pointer;
+// }
 
 .calendar .day.selected {
     border-radius: 50%;
@@ -62,9 +62,9 @@
     border-radius: 50%;
 }
 
-.calendar .day.today:hover {
-    background-color: green;
-}
+// .calendar .day.today:hover {
+//     background-color: green;
+// }
 .calendar .day{position: relative;}
 .calendar .day.contains::after {
     position: absolute;

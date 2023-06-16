@@ -19,7 +19,6 @@ const Progress = ({ dateTraining, setActiveProgressModal, setActiveProgress, tra
     const [calculator, setCalculator] = useState()
 
     const {user, trainings, progress} = useContext(Context);
-    console.log(dateTraining)
     const addProgressOfExercise = async () => {
         const res = await addProgress(numberOfApproach, weightInventory, repeations, currentExerciseId, trainingId, dateTraining).then(() => {
             setActiveProgress(true)

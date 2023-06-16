@@ -1,13 +1,20 @@
 import { Modal, Button } from "react-bootstrap"
 import './info.scss';
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Context } from "../..";
+import { fetchMuscle } from "../../https/musculApi";
 
 const Info = ({show, onHide, exerciseName, exerciseDescr, exerciseImg, targetMuscul}) => {
 
     const {musculs} = useContext(Context);
+    const [musculName, setMusculName] = useState()
 
+    useEffect(() => {
 
+        if (targetMuscul) {
+            fetchMuscle(targetMuscul).then(data => setMusculName(data[0].name))
+        }
+    }, [targetMuscul])
 
     return(
         <Modal show={show} onHide={onHide} className='info'>
@@ -25,7 +32,7 @@ const Info = ({show, onHide, exerciseName, exerciseDescr, exerciseImg, targetMus
                         {exerciseDescr}
                     </div>
                     <div className="info-content-musuls-type">
-                        {musculs.musculs[targetMuscul - 1]}
+                        {musculName}
                     </div>
                 </div>
             </Modal.Body>

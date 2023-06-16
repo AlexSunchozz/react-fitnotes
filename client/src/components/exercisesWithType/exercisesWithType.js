@@ -20,8 +20,9 @@ const ExercisesWithType = observer(({customEx, setCustomEx, saveExInTraining, se
     const [term, setTerm] = useState('');
     const [activeSearch, setActiveSearch] = useState(false);
     const {exercises, user, musculs, addExersisesInTrainingStore, CustomExercisesOfUserStore} = useContext(Context);
-    const [filterEx, setFilter] = useState(0);
+    const [filterEx, setFilter] = useState('Все');
     const [custom, setCustom] = useState()
+    const [exerciseMuscul, setExerciseMuscul] = useState();
 
     //Modal Custom Exercises
     const [activeCustomModal, setActiveCustomModal] = useState(false);
@@ -39,7 +40,7 @@ const ExercisesWithType = observer(({customEx, setCustomEx, saveExInTraining, se
             setSaveExInTraining([...saveExInTraining, exercise])
         }
     }
-
+    
 
     useEffect(() => {
         
@@ -75,7 +76,7 @@ const ExercisesWithType = observer(({customEx, setCustomEx, saveExInTraining, se
 
     return(
         <>
-            <Modal show={show} onHide={onHide}>
+            <Modal show={show} onHide={onHide} className='exercise-with-type-modal'>
                 <Modal.Header className='d-flex flex-column'>
                     <Row className='d-flex justify-content-between' style={{width: '100%'}}>
                         <Row className="top d-flex justify-content-between align-items-center">
@@ -116,11 +117,11 @@ const ExercisesWithType = observer(({customEx, setCustomEx, saveExInTraining, se
                     <Row  style={{width: '100%'}}>
                         <div className="filter-content mt-4 d-flex align-items-senter flex-wrap">
                         <div style={{margin:'0 10px 10px 0'}}>
-                            <div onClick={() => setFilter(0)} className="filter-content-item active">Все</div>
+                            <div onClick={() => setFilter('Все')} className="filter-content-item active">Все</div>
                         </div>
                             {musculs.musculs.map((muscul, i) => 
                                 <div style={{margin:'0 10px 10px 0'}}>
-                                    <div onClick={() => setFilter(i+1)} className="filter-content-item active mb-2" key={i}>{muscul}</div>
+                                    <div onClick={() => setFilter(muscul)} className="filter-content-item active mb-2" key={i}>{muscul}</div>
                                 </div>
                             )}
                             {custom ?

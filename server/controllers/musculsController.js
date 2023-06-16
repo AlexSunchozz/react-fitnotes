@@ -23,6 +23,12 @@ class MusculsController {
         const musculs = await TargetMusсle.findAll({where: {id: id}})
         return res.json(musculs);
     }
+
+    async getIdMuscul(req, res) {
+        const {name} = req.body
+        const idMuscul = await TargetMusсle.findOne({where: {name: name}})
+        return res.json(idMuscul)
+    }
 }
 
 module.exports = new MusculsController();

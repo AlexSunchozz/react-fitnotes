@@ -4,17 +4,17 @@ import { Context } from '../..';
 import { observer } from 'mobx-react-lite';
 import Info from '../infoExercise/info';
 import shtanga from './img/shtanga.png'
+import { getIdMuscul } from '../../https/musculApi';
 
 const ExercisesList = observer(({term, activeFilter, handleClick, saveExInTraining}) => {
     
     const {exercises} = useContext(Context);
-
-
     const [exerciseName, setExerciseName] = useState();
     const [exerciseDescr, setExerciseDesr] = useState();
     const [exerciseImg, setExerciseImg] = useState();
     const [showInfo, setShowInfo] = useState(false);
     const [targetMuscul, setTargetMusculs] = useState()
+    const [filter, setFilter] = useState(0);
 
     const checkExercise = (exercise) => {
         if (saveExInTraining.find(el => el.id === exercise.id)) {
@@ -24,16 +24,23 @@ const ExercisesList = observer(({term, activeFilter, handleClick, saveExInTraini
         }
     }
 
+    useEffect(() => {
+        if (activeFilter !== '' && activeFilter !== 'Все') {
+            getIdMuscul(activeFilter).then(data => setFilter(data.id))
+        }
+        
+    }, [activeFilter, filter])
+
     return(
         <>
             <ul className="types-exercises-list list">
                 {
                     <>
                         {
-                            activeFilter !== 0 && term === '' ?
+                            filter !== 'Все' && term === '' ?
 
                             exercises.exercises.filter(item => {
-                                return item.targetmuscleId === activeFilter
+                                return item.targetmuscleId === filter
                             }).map((exercise, i) => 
                                 <div className='d-flex align-items-center'>
                                     <li className={checkExercise(exercise)} key={i}
@@ -61,7 +68,7 @@ const ExercisesList = observer(({term, activeFilter, handleClick, saveExInTraini
 
                             <>
                                 {
-                                    activeFilter === 0 && term !== '' ?
+                                    filter === 'Все' && term !== '' ?
                                         exercises.exercises.filter(item => {
                                             return item.name.toLowerCase().indexOf(term.toLowerCase()) > -1;
                                         }).map((exercise, i) => 
@@ -90,9 +97,9 @@ const ExercisesList = observer(({term, activeFilter, handleClick, saveExInTraini
 
                                     <>
                                         {
-                                            activeFilter !== 0 && term !== '' ?
+                                            filter !== 'Все' && term !== '' ?
                                                 exercises.exercises.filter(item => {
-                                                    return item.targetmuscleId === activeFilter
+                                                    return item.targetmuscleId === filter
                                                 }).filter(item => {
                                                     return item.name.toLowerCase().indexOf(term.toLowerCase()) > -1;
                                                 }).map((exercise, i) => 
@@ -119,33 +126,37 @@ const ExercisesList = observer(({term, activeFilter, handleClick, saveExInTraini
                                                 )
                                             
                                             :
-                                            exercises.exercises.map((exercise, i) => 
-                                                <div className='d-flex align-items-center'>
-                                                    <li className={checkExercise(exercise)} key={i}
-                                                        onClick={() => handleClick(exercise)}
-                                                        style={{flex:'0 0 90%'}}>
-                                                        <div style={{cursor: 'pointer'}} className="list-item__link">
-                                                            <div className="list-item__img"><img src={exercise.img ? "http://localhost:5001/"+exercise.img : shtanga} alt="" /></div>
-                                                            <div className="list-item__title">{exercise.name}</div>
-                                                        </div>
-                                                    </li>
-                                                    <div className="dots" style={{flex:'0 0 7%', cursor:'pointer'}}
-                                                        onClick={() => {
-                                                            setShowInfo(!showInfo);
-                                                            setExerciseName(exercise.name);
-                                                            setExerciseDesr(exercise.description);
-                                                            setExerciseImg(exercise.img);
-                                                            setTargetMusculs(exercise.targetmuscleId)
-                                                        }}>
-                                                        <img src={dots} alt="dots" style={{width:'100%', height:'100%'}}/>
-                                                    </div>
-                                                </div>  
-                                            ) 
+                                            <></>
                                         }   
                                     </> 
                                 }
                             </>
-                        }   
+                        }  
+                        {
+                            activeFilter === 'Все' ? 
+                            exercises.exercises.map((exercise, i) => 
+                                <div className='d-flex align-items-center'>
+                                    <li className={checkExercise(exercise)} key={i}
+                                        onClick={() => handleClick(exercise)}
+                                        style={{flex:'0 0 90%'}}>
+                                        <div style={{cursor: 'pointer'}} className="list-item__link">
+                                            <div className="list-item__img"><img src={exercise.img ? "http://localhost:5001/"+exercise.img : shtanga} alt="" /></div>
+                                            <div className="list-item__title">{exercise.name}</div>
+                                        </div>
+                                    </li>
+                                    <div className="dots" style={{flex:'0 0 7%', cursor:'pointer'}}
+                                        onClick={() => {
+                                            setShowInfo(!showInfo);
+                                            setExerciseName(exercise.name);
+                                            setExerciseDesr(exercise.description);
+                                            setExerciseImg(exercise.img);
+                                            setTargetMusculs(exercise.targetmuscleId)
+                                        }}>
+                                        <img src={dots} alt="dots" style={{width:'100%', height:'100%'}}/>
+                                    </div>
+                                </div>  
+                            ) : <></>
+                        } 
                     </>
                 }
             </ul>
