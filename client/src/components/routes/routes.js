@@ -18,11 +18,11 @@ export const authRoutes = [
 
 export const publicPoutes = [
     {
-        path: LOGIN_ROUTE,
-        Component: Auth
-    },
-    {
         path: REGISTRATION_ROUTE,
         Component: Registration
     },
+    {
+        path: LOGIN_ROUTE,
+        Component: Auth
+    }
 ]
