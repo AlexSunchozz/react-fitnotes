@@ -23,13 +23,13 @@ After authorization or registration, the user gets to the main page of the appli
 
 The user has the ability to edit the workout by deleting and adding exercises from the list:
 
-<div style="display:flex">
-![Image](https://github.com/AlexSunchozz/react-fitnotes/blob/master/assets/photo_2023-06-12_15-33-57.jpg)
-![Image](https://github.com/AlexSunchozz/react-fitnotes/blob/master/assets/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA10.png)
-![Image](https://github.com/AlexSunchozz/react-fitnotes/blob/master/assets/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA9.png)
-![Image](https://github.com/AlexSunchozz/react-fitnotes/blob/master/assets/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA7.png)
-</div>
 
+<div>
+    <img align=top src="https://github.com/AlexSunchozz/react-fitnotes/blob/master/assets/photo_2023-06-12_15-33-57.jpg"/>
+    <img align=top src="https://github.com/AlexSunchozz/react-fitnotes/blob/master/assets/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA10.png"/>
+    <img align=top src="https://github.com/AlexSunchozz/react-fitnotes/blob/master/assets/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA9.png"/>
+    <img align=top src="https://github.com/AlexSunchozz/react-fitnotes/blob/master/assets/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA7.png"/>
+<div>
 ___
 
 In addition, the user has the ability to search for exercises by name in the search bar and using filters.
