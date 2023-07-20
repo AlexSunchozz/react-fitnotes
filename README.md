@@ -78,6 +78,7 @@ ___
 A timer has also been added for the user, which allows you to set the rest time between sets. The time set on the timer can be changed on the training page or open additional settings, where you can set the rest time, the timer change step and turn on an audio alert that will trigger when the timer expires.
 
 <div>
-    <img align=top src="https://github.com/AlexSunchozz/react-fitnotes/blob/master/assets/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA6.png"/>
-    <img align=top src="https://github.com/AlexSunchozz/react-fitnotes/blob/master/assets/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA5.png"/>
+    <img align=top src="https://github.com/AlexSunchozz/react-fitnotes/blob/master/assets/nfqvth%201.png"/>
+    <img align=top src="https://github.com/AlexSunchozz/react-fitnotes/blob/master/assets/nfqvth%202.png"/>
+    <img align=top src="https://github.com/AlexSunchozz/react-fitnotes/blob/master/assets/nfqvth%203.png"/>
 <div>
