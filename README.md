@@ -16,3 +16,4 @@ Docker technology was used to raise the database.
 
 After authorization or registration, the user gets to the main page of the application. To create a workout, you need to add exercises to the workout by clicking the button at the bottom of the screen.
 
+![Image](https://github.com/AlexSunchozz/react-fitnotes/blob/master/assets/photo_2023-06-12_15-33-57.jpg)
