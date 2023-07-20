@@ -28,7 +28,6 @@ The user has the ability to edit the workout by deleting and adding exercises fr
     <img align=top src="https://github.com/AlexSunchozz/react-fitnotes/blob/master/assets/photo_2023-06-12_15-33-57.jpg"/>
     <img align=top src="https://github.com/AlexSunchozz/react-fitnotes/blob/master/assets/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA10.png"/>
     <img align=top src="https://github.com/AlexSunchozz/react-fitnotes/blob/master/assets/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA9.png"/>
-    <img align=top src="https://github.com/AlexSunchozz/react-fitnotes/blob/master/assets/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA7.png"/>
 <div>
 ___
 
@@ -72,3 +71,13 @@ ___
 Viewing previous workouts is organized in a convenient calendar view, which allows the user to simply select the desired date and view all the exercises and information about the exercise in the selected workout.
 
 ![Image](https://github.com/AlexSunchozz/react-fitnotes/blob/master/assets/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA4.png)
+___
+
+### Timer
+
+A timer has also been added for the user, which allows you to set the rest time between sets. The time set on the timer can be changed on the training page or open additional settings, where you can set the rest time, the timer change step and turn on an audio alert that will trigger when the timer expires.
+
+<div>
+    <img align=top src="https://github.com/AlexSunchozz/react-fitnotes/blob/master/assets/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA6.png"/>
+    <img align=top src="https://github.com/AlexSunchozz/react-fitnotes/blob/master/assets/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA5.png"/>
+<div>
