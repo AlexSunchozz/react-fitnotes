@@ -23,10 +23,12 @@ After authorization or registration, the user gets to the main page of the appli
 
 The user has the ability to edit the workout by deleting and adding exercises from the list:
 
+<div style="display:flex">
 ![Image](https://github.com/AlexSunchozz/react-fitnotes/blob/master/assets/photo_2023-06-12_15-33-57.jpg)
 ![Image](https://github.com/AlexSunchozz/react-fitnotes/blob/master/assets/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA10.png)
 ![Image](https://github.com/AlexSunchozz/react-fitnotes/blob/master/assets/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA9.png)
-![Video](https://github.com/AlexSunchozz/react-fitnotes/blob/master/assets/%D0%97%D0%B0%D0%BF%D0%B8%D1%81%D1%8C%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202023-06-13%20%D0%B2%2001.34.10.mp4)
+![Image](https://github.com/AlexSunchozz/react-fitnotes/blob/master/assets/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA7.png)
+</div>
 
 ___
 
@@ -63,3 +65,4 @@ ___
 
 Viewing previous workouts is organized in a convenient calendar view, which allows the user to simply select the desired date and view all the exercises and information about the exercise in the selected workout.
 
+![Image](https://github.com/AlexSunchozz/react-fitnotes/blob/master/assets/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA4.png)
